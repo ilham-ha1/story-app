@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Story App</string>
+    <string name="title_home">Home</string>
+    <string name="title_add">Add Story</string>
+    <string name="title_setting">Setting</string>
+
+    <string name="signup">Register</string>
+    <string name="login">Login</string>
+    <string name="message_welcome_page">Let share your story!</string>
+    <string name="title_welcome_page">Welcome to Dicoding Story App!</string>
+    <string name="title_signup_page">Fill your identity</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="message_login_page">Please fill the data</string>
+    <string name="title_login_page">Are you ready to be the next ambassador?</string>
+    <string name="name">Name</string>
+    <string name="copyright" translatable="false">©Dicoding Story App</string>
+    <string name="message_main_page">Welcome to Dicoding Story App!</string>
+    <string name="logout">Logout</string>
+
+    <string name="error_empty_email">Email must be filled</string>
+    <string name="error_format_email">Use the correct email format</string>
+
+    <string name="error_empty_password">Password must be filled</string>
+    <string name="error_length_password">Password length must be 8 or more</string>
+
+    <string name="photo">Photo</string>
+    <string name="upload_date">Upload date</string>
+
+    <string name="detail_desc_title">Description</string>
+    <string name="desc_add">Write description here</string>
+    <string name="desc_add_error">Please add description</string>
+
+    <string name="upload">Upload</string>
+    <string name="gallery">Galery</string>
+    <string name="camera">Camera</string>
+
+    <string name="failed_instance_retrofit">Failed to instance Retrofit</string>
+    <string name="choose_img_first">Please choose an image first</string>
+
+    <string name="enter_email">Enter your email</string>
+    <string name="enter_pass">Enter your password</string>
+    <string name="enter_name">Enter your name</string>
+
+    <string name="failed_login">Failed to login</string>
+    <string name="failed_register">Failed to register</string>
+
+    <string name="set_confirm">Confirmation</string>
+    <string name="sure">Are you sure?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+
+    <string name="language_title">Language</string>
+    <string name="language">English</string>
+    <string name="account">Account</string>
+
+    <string name="appwidget_text" translatable="false">STAR WARS BANNER</string>
+    <string name="empty_text">NO DATA</string>
+
+</resources>

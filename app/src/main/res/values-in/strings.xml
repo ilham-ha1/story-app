@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Story App</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_add">Tambahkan Cerita</string>
+    <string name="title_setting">Pengaturan</string>
+    <string name="signup">Daftar</string>
+    <string name="login">Masuk</string>
+    <string name="message_welcome_page">Mari ceritakan pengalamanmu!</string>
+    <string name="title_welcome_page">Selamat Datang di Dicoding Story App!</string>
+    <string name="title_signup_page">Isi identitas dirimu</string>
+    <string name="message_login_page">Tolong isi datanya</string>
+    <string name="title_login_page">Apakah kamu siap menjadi ambassador berikutnya?</string>
+    <string name="name">Nama</string>
+    <string name="message_main_page">Selamat Datang di Dicoding Story App!</string>
+    <string name="logout">Keluar</string>
+    <string name="error_empty_email">Email harus diisi</string>
+    <string name="error_format_email">Gunakan format email yang benar</string>
+    <string name="error_empty_password">Password harus diisi</string>
+    <string name="error_length_password">Panjang password harus 8 atau lebih</string>
+    <string name="photo">Foto</string>
+    <string name="upload_date">Tanggal mengunggah</string>
+    <string name="detail_desc_title">Deskripsi</string>
+    <string name="desc_add">Tulis deskripsi disini</string>
+    <string name="desc_add_error">Tolong tambah deskripsi</string>
+    <string name="upload">Unggah</string>
+    <string name="gallery">Galeri</string>
+    <string name="camera">Kamera</string>
+    <string name="failed_instance_retrofit">Gagal untuk membuat retrofit</string>
+    <string name="choose_img_first">Pilih gambar terlebih dahulu</string>
+    <string name="enter_email">Masukkan email anda</string>
+    <string name="enter_pass">Masukkan password anda</string>
+    <string name="enter_name">Masukkan nama anda</string>
+    <string name="failed_login">Gagal untuk login</string>
+    <string name="failed_register">Gagal untuk mendaftar</string>
+    <string name="set_confirm">Konfirmasi</string>
+    <string name="sure">Apakah kamu yakin?</string>
+    <string name="no">Tidak</string>
+    <string name="yes">Iya</string>
+    <string name="language_title">Bahasa</string>
+    <string name="language">Indonesia</string>
+    <string name="account">Akun</string>
+    <string name="empty_text">TIDAK ADA DATA</string>
+</resources>
