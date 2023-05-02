@@ -41,4 +41,5 @@
     <string name="language">Indonesia</string>
     <string name="account">Akun</string>
     <string name="empty_text">TIDAK ADA DATA</string>
+    <string name="img_detail">Gambar di halamam detail</string>
 </resources>

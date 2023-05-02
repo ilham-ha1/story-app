@@ -20,9 +20,8 @@
     <fragment
         android:id="@+id/navigation_setting"
         android:name="org.dicoding.storyapp.ui.setting.SettingFragment"
-        android:label="@string/title_setting">
+        android:label="@string/title_setting"/>
 
-        </fragment>
 
 
 </navigation>

@@ -21,6 +21,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -32,6 +33,7 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import org.dicoding.storyapp.MainActivity
 import org.dicoding.storyapp.R
 import org.dicoding.storyapp.databinding.FragmentAddBinding
+import org.dicoding.storyapp.factory.ViewModelFactory
 import org.dicoding.storyapp.helper.createCustomTempFile
 import org.dicoding.storyapp.helper.reduceFileImage
 import org.dicoding.storyapp.helper.uriToFile
@@ -46,8 +48,8 @@ import java.io.File
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 class AddFragment : Fragment() {
 
-    private var _binding: FragmentAddBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var addViewModel: AddViewModel
+    private lateinit var binding: FragmentAddBinding
     private lateinit var currentPhotoPath: String
     private var getFile: File? = null
     private lateinit var userPreference: UserPreference
@@ -60,13 +62,19 @@ class AddFragment : Fragment() {
     ): View {
 
         userPreference = UserPreference.getInstance(requireContext().dataStore)
-        _binding = FragmentAddBinding.inflate(inflater, container, false)
+        addViewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(requireContext(), userPreference)
+        )[AddViewModel::class.java]
+
+        binding = FragmentAddBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentAddBinding.bind(view)
+        binding = FragmentAddBinding.bind(view)
+
 
         if (!allPermissionsGranted()) {
             ActivityCompat.requestPermissions(
@@ -150,29 +158,9 @@ class AddFragment : Fragment() {
                 requestImageFile
             )
 
-            val service = ApiConfig.getApiService().uploadImage("Bearer $token", imageMultipart, description)
+            addViewModel.uploadImg("Bearer $token", imageMultipart, description)
 
-            service.enqueue(object : Callback<AddNewStoryResponse> {
-                override fun onResponse(
-                    call: Call<AddNewStoryResponse>,
-                    response: Response<AddNewStoryResponse>
-                ) {
-                    if (response.isSuccessful) {
-                        val responseBody = response.body()
-                        if (responseBody != null && !responseBody.error) {
-                            Toast.makeText(requireContext(), responseBody.message, Toast.LENGTH_SHORT).show()
-                            val intent = Intent(requireContext(),MainActivity::class.java)
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                            startActivity(intent)
-                        }
-                    } else {
-                        Toast.makeText(requireContext(), response.message(), Toast.LENGTH_SHORT).show()
-                    }
-                }
-                override fun onFailure(call: Call<AddNewStoryResponse>, t: Throwable) {
-                    Toast.makeText(requireContext(), resources.getString(R.string.failed_instance_retrofit), Toast.LENGTH_SHORT).show()
-                }
-            })
+
         } else {
             Toast.makeText(requireContext(), resources.getString(R.string.choose_img_first), Toast.LENGTH_SHORT).show()
         }

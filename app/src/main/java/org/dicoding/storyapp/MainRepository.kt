@@ -7,7 +7,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
 import org.dicoding.storyapp.model.preference.UserModel
 import org.dicoding.storyapp.model.preference.UserPreference
-import org.dicoding.storyapp.ui.login.LoginActivity
 import org.dicoding.storyapp.ui.welcome.WelcomeActivity
 
 class MainRepository(private val context: Context,private val pref: UserPreference) {

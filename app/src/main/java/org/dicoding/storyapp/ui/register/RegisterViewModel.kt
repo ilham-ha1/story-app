@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 import org.dicoding.storyapp.model.body.RegisterBody
 import org.dicoding.storyapp.model.preference.UserPreference
 
-class RegisterViewModel(context: Context, private val pref: UserPreference) : ViewModel() {
-    private val registerRepository:RegisterRepository = RegisterRepository(context,pref)
+class RegisterViewModel(context: Context) : ViewModel() {
+    private val registerRepository:RegisterRepository = RegisterRepository(context)
 
     val isLoading = registerRepository.isLoading
     val success = registerRepository.success

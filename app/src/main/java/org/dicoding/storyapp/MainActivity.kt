@@ -9,6 +9,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
@@ -34,17 +35,22 @@ class MainActivity : AppCompatActivity() {
             ViewModelFactory(this,UserPreference.getInstance(dataStore))
         )[MainViewModel::class.java]
 
-        val navView: BottomNavigationView = binding.navView
+        val navController = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main)?.findNavController()
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        val navView: BottomNavigationView = binding.navView
+        if (navController != null) {
+            navView.setupWithNavController(navController)
+        }
+
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home, R.id.navigation_add, R.id.navigation_setting
             )
         )
 
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        if (navController != null) {
+            setupActionBarWithNavController(navController,appBarConfiguration)
+        }
 
         mainViewModel.getUser().observe(this) { user ->
             if (!user.isLogin) {

@@ -52,14 +52,16 @@ class DetailActivity : AppCompatActivity() {
         }
 
         detailViewModel.detailStory.observe(this){
-            Glide.with(binding.root.context)
-                .load(it.story.photoUrl)
-                .into(binding.imageView2)
-            binding.tvDetailUsername.text = it.story.name
-            binding.tvDetailDescTitle.text = resources.getString(R.string.detail_desc_title)
-            binding.tvDetailDesc.text = it.story.description
-            binding.tvDetailDateTile.text = resources.getString(R.string.upload_date)
-            binding.tvDetailDate.text = it.story.createdAt
+            with(binding) {
+                Glide.with(binding.root.context)
+                    .load(it.story.photoUrl)
+                    .into(binding.imageView2)
+                tvDetailUsername.text = it.story.name
+                tvDetailDescTitle.text = resources.getString(R.string.detail_desc_title)
+                tvDetailDesc.text = it.story.description
+                tvDetailDateTile.text = resources.getString(R.string.upload_date)
+                tvDetailDate.text = it.story.createdAt
+            }
         }
     }
 

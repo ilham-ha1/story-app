@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import org.dicoding.storyapp.MainViewModel
 import org.dicoding.storyapp.model.preference.UserPreference
+import org.dicoding.storyapp.ui.add.AddViewModel
 import org.dicoding.storyapp.ui.detail.DetailViewModel
 import org.dicoding.storyapp.ui.login.LoginViewModel
 import org.dicoding.storyapp.ui.register.RegisterViewModel
@@ -20,8 +21,11 @@ class ViewModelFactory(private val context: Context,private val pref: UserPrefer
             modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
                 DetailViewModel() as T
             }
+            modelClass.isAssignableFrom(AddViewModel::class.java) -> {
+                AddViewModel(context) as T
+            }
             modelClass.isAssignableFrom(RegisterViewModel::class.java) -> {
-                RegisterViewModel(context,pref) as T
+                RegisterViewModel(context) as T
             }
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
                 LoginViewModel(context,pref) as T

@@ -56,5 +56,6 @@
 
     <string name="appwidget_text" translatable="false">STAR WARS BANNER</string>
     <string name="empty_text">NO DATA</string>
+    <string name="img_detail">Image on detail page</string>
 
 </resources>
