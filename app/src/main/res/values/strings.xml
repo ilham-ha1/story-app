@@ -57,5 +57,16 @@
     <string name="appwidget_text" translatable="false">STAR WARS BANNER</string>
     <string name="empty_text">NO DATA</string>
     <string name="img_detail">Image on detail page</string>
+    <string name="retry">Retry</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="maps" translatable="false">Maps</string>
+
+    <string name="position">Position</string>
+
+    <string name="normal_type"  translatable="false">Normal</string>
+    <string name="satellite_type"  translatable="false">Satellite</string>
+    <string name="terrain_type"  translatable="false">Terrain</string>
+    <string name="hybrid_type"  translatable="false">Hybrid</string>
+
 
 </resources>

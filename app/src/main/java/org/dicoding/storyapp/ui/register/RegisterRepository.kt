@@ -7,7 +7,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import org.dicoding.storyapp.R
 import org.dicoding.storyapp.model.body.RegisterBody
-import org.dicoding.storyapp.model.preference.UserPreference
 import org.dicoding.storyapp.model.response.RegisterResponse
 import org.dicoding.storyapp.remote.ApiConfig
 import retrofit2.Call

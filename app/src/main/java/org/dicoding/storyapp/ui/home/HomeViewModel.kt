@@ -1,16 +1,21 @@
 package org.dicoding.storyapp.ui.home
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
+import dagger.hilt.android.lifecycle.HiltViewModel
+import org.dicoding.storyapp.model.response.ListStoryItem
+import javax.inject.Inject
 
-class HomeViewModel : ViewModel() {
-    private val homeRepository: HomeRepository = HomeRepository()
+@HiltViewModel
+class HomeViewModel@Inject constructor(private val homeRepository: HomeRepository) : ViewModel() {
 
-    val listStory = homeRepository.listStory
     val isLoading = homeRepository.isLoading
     val isDataNotFound = homeRepository.isDataNotFound
 
-    fun requestListStory(token: String){
-       homeRepository.requestListStory(token)
-    }
+    fun requestListStory(token: String): LiveData<PagingData<ListStoryItem>> =
+        homeRepository.requestListStory(token).cachedIn(viewModelScope)
 
 }

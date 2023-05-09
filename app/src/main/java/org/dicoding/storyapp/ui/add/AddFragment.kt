@@ -30,7 +30,6 @@ import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
-import org.dicoding.storyapp.MainActivity
 import org.dicoding.storyapp.R
 import org.dicoding.storyapp.databinding.FragmentAddBinding
 import org.dicoding.storyapp.factory.ViewModelFactory
@@ -38,14 +37,10 @@ import org.dicoding.storyapp.helper.createCustomTempFile
 import org.dicoding.storyapp.helper.reduceFileImage
 import org.dicoding.storyapp.helper.uriToFile
 import org.dicoding.storyapp.model.preference.UserPreference
-import org.dicoding.storyapp.model.response.AddNewStoryResponse
-import org.dicoding.storyapp.remote.ApiConfig
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.io.File
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
 class AddFragment : Fragment() {
 
     private lateinit var addViewModel: AddViewModel
@@ -75,7 +70,6 @@ class AddFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentAddBinding.bind(view)
 
-
         if (!allPermissionsGranted()) {
             ActivityCompat.requestPermissions(
                 requireActivity(),
@@ -83,9 +77,11 @@ class AddFragment : Fragment() {
                 REQUEST_CODE_PERMISSIONS
             )
         }
+
         lifecycleScope.launch {
             token = userPreference.getToken().first()
         }
+
         binding.cameraButton.setOnClickListener { startTakePhoto() }
         binding.galleryButton.setOnClickListener { startGallery() }
         binding.uploadButton.setOnClickListener { uploadImage() }
@@ -150,7 +146,8 @@ class AddFragment : Fragment() {
                 binding.editTextTextMultiLine.error = resources.getString(R.string.desc_add_error)
             }
 
-            val description = binding.editTextTextMultiLine.text.toString().toRequestBody("text/plain".toMediaType())
+            val description = binding.editTextTextMultiLine.text.toString()
+                .toRequestBody("text/plain".toMediaType())
             val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
             val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
                 "photo",
@@ -160,9 +157,12 @@ class AddFragment : Fragment() {
 
             addViewModel.uploadImg("Bearer $token", imageMultipart, description)
 
-
         } else {
-            Toast.makeText(requireContext(), resources.getString(R.string.choose_img_first), Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                resources.getString(R.string.choose_img_first),
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
@@ -171,7 +171,11 @@ class AddFragment : Fragment() {
     }
 
     companion object {
-        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
+        private val REQUIRED_PERMISSIONS = arrayOf(
+            Manifest.permission.CAMERA,
+            Manifest.permission.ACCESS_FINE_LOCATION
+        )
+
         private const val REQUEST_CODE_PERMISSIONS = 10
     }
 }

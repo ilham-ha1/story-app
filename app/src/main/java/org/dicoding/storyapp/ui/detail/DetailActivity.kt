@@ -61,6 +61,13 @@ class DetailActivity : AppCompatActivity() {
                 tvDetailDesc.text = it.story.description
                 tvDetailDateTile.text = resources.getString(R.string.upload_date)
                 tvDetailDate.text = it.story.createdAt
+                tvDetailPositionTile.text = resources.getString(R.string.position)
+                val positionText = if (it.story.lat != null && it.story.lon != null) {
+                    "${it.story.lat}, ${it.story.lon}"
+                } else {
+                    ""
+                }
+                tvDetailPosition.text = positionText
             }
         }
     }

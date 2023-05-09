@@ -42,4 +42,7 @@
     <string name="account">Akun</string>
     <string name="empty_text">TIDAK ADA DATA</string>
     <string name="img_detail">Gambar di halamam detail</string>
+    <string name="retry">Coba lagi</string>
+    <string name="title_activity_maps">Maps</string>
+    <string name="position">Posisi</string>
 </resources>

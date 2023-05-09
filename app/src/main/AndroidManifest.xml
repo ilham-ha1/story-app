@@ -12,6 +12,9 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <queries>
         <intent>
             <action android:name="android.intent.action.VIEW" />
@@ -32,6 +35,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StoryApp"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA5T-dmxlILs_Q6lJwds9zHr4myZeOgm1Y" />
+
+        <activity
+            android:name=".ui.map.MapsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_maps" />
         <activity
             android:name=".ui.splash.SplashScreenActivity"
             android:exported="true">

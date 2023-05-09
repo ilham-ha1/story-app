@@ -11,6 +11,7 @@
         <entry key="..\:/android-project/StoryApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.1" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/drawable/ic_baseline_error_24.xml" value="0.279" />
+        <entry key="..\:/android-project/StoryApp/app/src/main/res/drawable/ic_baseline_map_24.xml" value="0.1" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/drawable/ic_capture.xml" value="0.1" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/drawable/ic_close_black_24.xml" value="0.1" />
@@ -22,20 +23,24 @@
         <entry key="..\:/android-project/StoryApp/app/src/main/res/drawable/ic_switch_camera.xml" value="0.1" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/drawable/rounded_background.xml" value="0.1" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/activity_camera.xml" value="0.1" />
-        <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/activity_detail.xml" value="0.264" />
+        <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/activity_detail.xml" value="0.6" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/activity_login.xml" value="0.152" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/activity_maps.xml" value="0.1" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/activity_welcome.xml" value="0.264" />
-        <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/fragment_add.xml" value="0.1" />
+        <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/fragment_add.xml" value="0.264" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.17980072463768115" />
-        <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/fragment_home.xml" value="0.152" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/fragment_setting.xml" value="0.2234375" />
-        <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/image_banner_widget.xml" value="0.1" />
-        <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/item_story.xml" value="0.1" />
+        <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/image_banner_widget.xml" value="0.136" />
+        <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/item_loading.xml" value="0.2" />
+        <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/item_story.xml" value="0.536" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/layout/widget_item.xml" value="0.1" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.27447916666666666" />
+        <entry key="..\:/android-project/StoryApp/app/src/main/res/menu/home.xml" value="0.1" />
+        <entry key="..\:/android-project/StoryApp/app/src/main/res/menu/maps.xml" value="0.1" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1825" />
         <entry key="..\:/android-project/StoryApp/app/src/main/res/xml/preferences.xml" value="0.1" />
       </map>
