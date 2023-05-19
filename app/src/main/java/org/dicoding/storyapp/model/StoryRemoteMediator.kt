@@ -83,7 +83,6 @@ class StoryRemoteMediator(
                 }
 
             }
-
             isLoading.postValue(false)
             isDataNotFound.postValue(endOfPaginationReached)
             MediatorResult.Success(endOfPaginationReached = endOfPaginationReached)

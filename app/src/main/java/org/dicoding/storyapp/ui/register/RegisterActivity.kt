@@ -114,7 +114,8 @@ class RegisterActivity : AppCompatActivity() {
             binding.signupButton.isEnabled =
                 !binding.nameEditText.text.isNullOrBlank() &&
                         !binding.emailEditText.text.isNullOrBlank() &&
-                        !binding.passwordEditText.text.isNullOrBlank()
+                        !binding.passwordEditText.text.isNullOrBlank() &&
+                        binding.passwordEditText.text.toString().length >= 8
         }
 
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
